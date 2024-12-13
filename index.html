@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音声認識ゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="start-screen">
+            <h1>音声認識ゲーム</h1>
+            <button id="start-button">スタート</button>
+        </div>
+        <div id="game-screen" style="display: none;">
+            <h2>「がんばれ」と言ってください！</h2>
+            <p id="message"></p>
+            <p>現在の音量: <span id="current-volume">0</span> dB</p>
+        </div>
+        <div id="clear-screen" style="display: none;">
+            <h2>クリア！</h2>
+            <p>検知された音量: <span id="clear-volume"></span> dB</p>
+            <button id="back-button">戻る</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
