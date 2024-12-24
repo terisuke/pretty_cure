@@ -1,9 +1,10 @@
 let audioContext: AudioContext
 let analyser: AnalyserNode
 let dataArray: Uint8Array
+  // Start of Selection
 
 export async function setupAudio() {
-  audioContext = new (window.AudioContext || window.webkitAudioContext)()
+  audioContext = new (window.AudioContext)()
   analyser = audioContext.createAnalyser()
   analyser.fftSize = 256
   dataArray = new Uint8Array(analyser.frequencyBinCount)
