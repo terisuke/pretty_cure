@@ -58,8 +58,8 @@ export default function GameScreen({ onEnd }: GameScreenProps) {
         maxVolumeRef.current = Math.max(maxVolumeRef.current, db)
         setMaxVolume(maxVolumeRef.current)
 
-        const hasPhrase = transcript.includes('頑張れ')
-        const hasVolume = maxVolumeRef.current >= 3
+        const hasPhrase = ['頑張れ', 'がんばれ', 'がんばえ'].some(phrase => transcript.includes(phrase))
+        const hasVolume = maxVolumeRef.current >= 5
 
         setDebug({ hasPhrase, hasVolume })
 
@@ -140,7 +140,7 @@ export default function GameScreen({ onEnd }: GameScreenProps) {
       <p className="mt-4">最後に検知した語句: <span className="font-bold">{lastDetectedPhrase}</span></p>
       <div className="mt-4 text-sm text-gray-500">
         <p>フレーズ検知: {debug.hasPhrase ? '✅' : '❌'}</p>
-        <p>音量条件 (3dB以上): {debug.hasVolume ? '✅' : '❌'}</p>
+        <p>音量条件 (30dB以上): {debug.hasVolume ? '✅' : '❌'}</p>
       </div>
     </div>
   )
